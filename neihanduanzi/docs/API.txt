@@ -1,0 +1,1027 @@
+
+第一次软件启动， 第一个接口
+   请求网址参数
+app=1
+default=1
+ac=wifi   网络连接 类型   手机卡为3g ， 也可以有wifi
+channel=wandoujia   推广渠道信息
+aid=7                              固定
+app_name=joke_essay  固定
+version_code=302         固定  apk版本号
+device_platform=android   固定
+device_type=H30-U10   设备型号       对应的是Build.MODEL
+os_api=17                       手机 Android对于的API Level
+os_version=4.2.2             Android手机系统版本号
+uuid=359209028606337      IMEI  有SIM卡的  时 ， 通过TelephonyManager来获取。
+openudid=ac5c8292595d0744      Android_id 属性 ， 可以通过特定的方法获取到。
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+19	200	HTTP	ib.snssdk.com	/service/settings/v2/?app=1&default=1&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	51	
+application/json	
+
+
+
+
+        GET http://ib.snssdk.com/service/settings/v2/?app=1&default=1&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: ib.snssdk.com
+Connection: Keep-Alive
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:18:09 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 20
+        
+{"message": "error"}
+
+
+第二个接口
+本接口返回的数据包含 install_id ， 以及device_id ，这两个id在其他的网址请求中作为参数iid 和 device_id  。重要重要
+post
+这个数据提交时，必须经过gzip压缩
+
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+22	200	HTTP	log.snssdk.com	/service/2/app_log_config/	417	
+application/json	
+
+
+
+POST http://log.snssdk.com/service/2/app_log_config/ HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Accept-Encoding: gzip
+Content-Length: 614
+Host: log.snssdk.com
+Connection: Keep-Alive
+
+参数分析：
+
+openudid  这个就是统一一个android_id
+clientudid  随机的一个UUID ， 可以通UUID类获取， 建议生产后保存起来
+os_api  Android API Level
+package com.ss.android.essay.joke 这个是固定的
+"apk_version" 3.0.2
+"sdk_version" : 1    固定的
+aid   7  固定的
+resolution 1280x800 分辨率
+access  wifi  网络连接类型 ， 就和网址上面的ac  参数一样
+
+os_version 操作系统版本号
+version_code   当前软件整型的版本号
+device_model  手机型号
+display_name    固定内容 ， 当前软件的中文名
+timezone   8  时区
+mc   网卡mac地址
+push_sdk      不明白 ， 注意这是一个数组
+display_density  hdpi   当前手机的屏幕密度       
+sig_hash  固定的， 针对3.0.2版本的内涵段子
+language  当前手机的语言
+channel    推广渠道 ， 豌豆荚
+
+//可能会有的数据
+  carrier  运营商  中文 或者是Android         ，代码， 或名称
+
+magic_tag      
+
+
+{
+    "header": {
+        "openudid": "ac5c8292595d0744", 
+        "os": "Android", 
+        "clientudid": "ad91cefd-10e7-4f57-96c2-4090ce478378", 
+        "os_api": 17, 
+        "package": "com.ss.android.essay.joke", 
+        "appkey": "4f58859c527015425e000070", 
+        "app_version": "3.0.2", 
+        "sdk_version": 1, 
+        "aid": 7, 
+        "resolution": "1280x720", 
+        "udid": "359209028606337", 
+        "access": "wifi", 
+        "os_version": "4.2.2", 
+        "version_code": 302, 
+        "device_model": "H30-U10", 
+        "display_name": "内涵段子", 
+        "timezone": 8, 
+        "mc": "20:08:ed:83:ab:d1", 
+        "push_sdk": [
+            2
+        ], 
+        "display_density": "xhdpi", 
+        "carrier": "中国联通", 
+        "sig_hash": "aea615ab910015038f73c47e45d21466", 
+        "language": "zh", 
+        "channel": "wandoujia"
+    }, 
+    "magic_tag": "ss_app_log"}
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:18:10 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+X-SS-Set-Cookie: install_id=2335870100; Domain=.snssdk.com; expires=Fri, 27-Sep-2019 06:18:10 GMT; Max-Age=157680000; Path=/
+Set-Cookie: install_id=2335870100; Domain=.snssdk.com; expires=Fri, 27-Sep-2019 06:18:10 GMT; Max-Age=157680000; Path=/
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 1250
+
+    服务器返回响应的数据。
+{
+    "config": {
+        "session_interval": 30, 
+        "fingerprint_codes": [
+            1, 
+            2, 
+            3, 
+            4
+        ], 
+        "allow_push_service": 0, 
+        "image_error_report": {
+            "p0.pstatp.com": {
+                "net_report_count": 10, 
+                "srv_error_interval": 10, 
+                "srv_report_count": 3, 
+                "net_error_interval": 10, 
+                "net_silent_period": 60, 
+                "srv_silent_period": 300
+            }, 
+            "p.pstatp.com": {
+                "net_report_count": 5, 
+                "srv_error_interval": 10, 
+                "srv_report_count": 3, 
+                "net_error_interval": 30, 
+                "net_silent_period": 60, 
+                "srv_silent_period": 300
+            }, 
+            "p2.pstatp.com": {
+                "net_report_count": 10, 
+                "srv_error_interval": 10, 
+                "srv_report_count": 3, 
+                "net_error_interval": 10, 
+                "net_silent_period": 60, 
+                "srv_silent_period": 300
+            }, 
+            "p1.pstatp.com": {
+                "net_report_count": 10, 
+                "srv_error_interval": 10, 
+                "srv_report_count": 3, 
+                "net_error_interval": 10, 
+                "net_silent_period": 60, 
+                "srv_silent_period": 300
+            }
+        }, 
+        "batch_event_interval": 60, 
+        "allow_push_list": [ ], 
+        "send_policy": "start", 
+        "image_error_codes": [
+            2, 
+            3, 
+            4, 
+            6, 
+            8, 
+            12, 
+            13, 
+            14, 
+            15
+        ], 
+        "allow_keep_alive": true, 
+        "hp_stat_sampling_ratio": {
+            "default": 0.01, 
+            "/data/get_item_summary/": 0.00004
+        }, 
+        "image_sampling_ratio": {
+            "p0.pstatp.com": 0.01, 
+            "p.pstatp.com": 0.01, 
+            "p2.pstatp.com": 0.01, 
+            "p1.pstatp.com": 0.01
+        }
+    }, 
+    "device_id": 2718056496,     //这个字段在后续的所有请求里，都用到了。
+
+    "server_time": 1411885090, 
+    "magic_tag": "ss_app_log", 
+    "install_id": 2335870100      //这个字段在后续的所有请求里，都用到了。
+}
+
+第三个接口    
+     请求地址参数
+    获取文本段子的服务器地址， 所有请求文本列表的API调用都要用这个服务器
+以下是所有GET请求的公共参数， 需要使用统一的代码来设置
+
+ac=wifi
+channel=wandoujia
+aid=7
+app_name=joke_essay
+version_code=302
+device_platform=android
+device_type=H30-U10
+os_api=17
+os_version=4.2.2
+uuid=359209028606337
+openudid=ac5c8292595d0744	90	
+application/json	
+
+
+GET http://dm.toutiao.com/get_domains/?ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: dm.toutiao.com
+Connection: Keep-Alive
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:18:13 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 67
+
+{"message": "success","data": {"mapping": {"i": "ic.snssdk.com"}}} 
+
+第四个接口
+
+
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+26	200	HTTP	isub.snssdk.com	/2/user/info/?ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	116	
+text/html; charset=utf-8	
+
+
+
+GET http://isub.snssdk.com/2/user/info/?ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: isub.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100
+X-SS-Cookie: install_id=2335870100
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:18:12 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 101
+
+{"message": "error", "data": {"name": "session_expired", "description": "Session\u5df2\u8fc7\u671f"}}
+
+第五个接口 广告  AD
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+27	200	HTTP	ib.snssdk.com	/service/6/app_ad/?_unused=0&carrier=%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A&mcc_mnc=46001&display_density=720x1280&display_dpi=320&density=2.0&access=wifi&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	435	
+application/json	
+
+
+
+GET http://ib.snssdk.com/service/6/app_ad/?_unused=0&carrier=%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A&mcc_mnc=46001&display_density=720x1280&display_dpi=320&density=2.0&access=wifi&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: ib.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100
+X-SS-Cookie: install_id=2335870100
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:18:12 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 2436
+
+{
+    "message": "success", 
+    "data": {
+        "app_bind": {
+            "app_list": [ ], 
+            "interval": 604800, 
+            "splash_interval": 0, 
+            "leave_interval": 120
+        }, 
+        "splash": [
+            {
+                "display_density": "640x1136", 
+                "expire_seconds": 34908, 
+                "display_time": 3, 
+                "display_after": 0, 
+                "title": "", 
+                "url": "http://p2.pstatp.com/origin/1362/7233753831", 
+                "track_url": "", 
+                "splash_interval": 7200, 
+                "open_url": "", 
+                "leave_interval": 600, 
+                "expire_timestamp": 1411920000, 
+                "splash_id": 3564333713, 
+                "action": "", 
+                "type": "web", 
+                "id": 3564333713
+            }, 
+            {
+                "display_density": "640x1136", 
+                "expire_seconds": 86400, 
+                "display_time": 3, 
+                "display_after": 34907, 
+                "title": "", 
+                "url": "http://p2.pstatp.com/origin/1362/7233753831", 
+                "track_url": "", 
+                "splash_interval": 7200, 
+                "open_url": "", 
+                "leave_interval": 600, 
+                "expire_timestamp": 1412006400, 
+                "splash_id": 3564333713, 
+                "action": "", 
+                "type": "web", 
+                "id": 3564333713
+            }, 
+            {
+                "display_density": "640x1136", 
+                "expire_seconds": 86400, 
+                "display_time": 3, 
+                "display_after": 121307, 
+                "title": "", 
+                "url": "http://p2.pstatp.com/origin/1362/7233753831", 
+                "track_url": "", 
+                "splash_interval": 7200, 
+                "open_url": "", 
+                "leave_interval": 600, 
+                "expire_timestamp": 1412092800, 
+                "splash_id": 3564333713, 
+                "action": "", 
+                "type": "web", 
+                "id": 3564333713
+            }, 
+            {
+                "display_density": "640x1136", 
+                "expire_seconds": 86400, 
+                "display_time": 3, 
+                "display_after": 207707, 
+                "title": "", 
+                "url": "http://p2.pstatp.com/origin/1362/7233753831", 
+                "track_url": "", 
+                "splash_interval": 7200, 
+                "open_url": "", 
+                "leave_interval": 600, 
+                "expire_timestamp": 1412179200, 
+                "splash_id": 3564333713, 
+                "action": "", 
+                "type": "web", 
+                "id": 3564333713
+            }, 
+            {
+                "display_density": "640x1136", 
+                "expire_seconds": 86400, 
+                "display_time": 3, 
+                "display_after": 294107, 
+                "title": "", 
+                "url": "http://p2.pstatp.com/origin/1362/7233753831", 
+                "track_url": "", 
+                "splash_interval": 7200, 
+                "open_url": "", 
+                "leave_interval": 600, 
+                "expire_timestamp": 1412265600, 
+                "splash_id": 3564333713, 
+                "action": "", 
+                "type": "web", 
+                "id": 3564333713
+            }, 
+            {
+                "display_density": "640x1136", 
+                "expire_seconds": 86400, 
+                "display_time": 3, 
+                "display_after": 380507, 
+                "title": "", 
+                "url": "http://p2.pstatp.com/origin/1362/7233753831", 
+                "track_url": "", 
+                "splash_interval": 7200, 
+                "open_url": "", 
+                "leave_interval": 600, 
+                "expire_timestamp": 1412352000, 
+                "splash_id": 3564333713, 
+                "action": "", 
+                "type": "web", 
+                "id": 3564333713
+            }
+        ], 
+        "sdk_splash": 0, 
+        "ad_area": [
+            {
+                "type": "umengapplist", 
+                "area": "setting_app_recommend"
+            }, 
+            {
+                "type": "ewall", 
+                "area": "essay_ali_right"
+            }
+        ], 
+        "display_area": [ ]
+    }}
+
+第六个接口 
+
+
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+79	200	HTTP	i.snssdk.com	/push/get_service_addrs/?ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	129	
+application/json;charset=UTF-8	
+[#25]	
+
+
+
+GET http://i.snssdk.com/push/get_service_addrs/?ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: i.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100
+X-SS-Cookie: install_id=2335870100
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:18:12 GMT
+Content-Type: application/json;charset=UTF-8
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 131
+
+{  "request_id": 7603048521731615387,  "max_interval": 60,  "addrs": [    "115.28.114.118:8900",    "115.28.114.98:8900"  ] }
+
+
+第七个接口
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+77	200	HTTP	log.snssdk.com	/service/2/app_log/	98	
+application/json	
+[#23]	
+POST http://log.snssdk.com/service/2/app_log/ HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Accept-Encoding: gzip
+Content-Length: 712
+Host: log.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100
+X-SS-Cookie: install_id=2335870100
+{
+    "launch": [
+        {
+            "datetime": "2014-09-28 14:18:06", 
+            "session_id": "932ba0e7-3c7c-40d9-92c7-a67bb823291d"
+        }
+    ], 
+    "header": {
+        "openudid": "ac5c8292595d0744", 
+        "os": "Android", 
+        "clientudid": "ad91cefd-10e7-4f57-96c2-4090ce478378", 
+        "os_api": 17, 
+        "package": "com.ss.android.essay.joke", 
+        "appkey": "4f58859c527015425e000070", 
+        "app_version": "3.0.2", 
+        "sdk_version": 1, 
+        "aid": 7, 
+        "resolution": "1280x720", 
+        "udid": "359209028606337", 
+        "access": "wifi", 
+        "os_version": "4.2.2", 
+        "version_code": 302, 
+        "device_model": "H30-U10", 
+        "display_name": "内涵段子", 
+        "timezone": 8, 
+        "mc": "20:08:ed:83:ab:d1", 
+        "push_sdk": [
+            2
+        ], 
+        "display_density": "xhdpi", 
+        "carrier": "中国联通", 
+        "sig_hash": "aea615ab910015038f73c47e45d21466", 
+        "language": "zh", 
+        "channel": "wandoujia"
+    }, 
+    "magic_tag": "ss_app_log"}
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:18:11 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 76
+
+{
+    "message": "success", 
+    "server_time": 1411885091, 
+    "magic_tag": "ss_app_log"}
+第八个接口
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+1	200	HTTP	ic.snssdk.com	/service/3/app_components/?screen_type=android_hdpi&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	961	
+application/json	
+
+
+
+...
+
+第九个接口  版本检查   （启动时的版本检查）
+
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+2	200	HTTP	ichannel.snssdk.com	/service/2/check_version/?iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	514	
+application/json	
+
+
+GET http://ichannel.snssdk.com/service/2/check_version/?iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: ichannel.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100
+X-SS-Cookie: install_id=2335870100
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:56:52 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 973
+{
+    "message": "success", 
+    "data": {
+        "market_url": "https://play.google.com/store/apps/details?id=com.ss.android.essay.joke", 
+        "last_version_code": 302, 
+        "market_package": "", 
+        "market_name": "", 
+        "real_last_version_code": 302, 
+        "whats_new": "【火爆升级】1.审核段子左右为难？向左滑动“跳过审核”，留给其他段友审核吧！2.修复已知的问题，段子哥一直在努力！3.优化浏览体验，刷段子更酸爽！", 
+        "last_version_name": "3.0.2", 
+        "latency": 20, 
+        "real_last_version_name": "3.0.2", 
+        "market_download_url": "", 
+        "download_url": "http://s0.pstatp.com/site/download/app/apk/joke/3.0/JokeEssay_download_v3.0.2_8f6f888.apk", 
+        "no_market_only": 0, 
+        "try_market": 0, 
+        "last_real_version_code": 302, 
+        "verbose_name": "内涵段子"
+    }}
+
+第10个接口   获取发表时的提示
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+5	200	HTTP	ic.snssdk.com	/2/essay/settings/?iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	280	
+application/json	
+
+
+GET http://ic.snssdk.com/2/essay/settings/?iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: ic.snssdk.com
+
+
+Connection: Keep-Alive
+Cookie: install_id=2335870100
+X-SS-Cookie: install_id=2335870100
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:56:48 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 437
+
+{
+    "message": "success", 
+    "data": {
+        "ugc": {
+            "presettext": "", 
+            "placeholder": "您的投稿经过段友审核才能发布哦！我们的目标是：专注内涵，拒绝黄反！可以矫情，不要煽情!
+
+敬告：发布色情敏感内容会被封号处理"
+        }
+    }}
+
+第11个接口    新活动统计
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+12	200	HTTP	ic.snssdk.com	/2/essay/zone/activities/count/?&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	123	
+application/json	
+
+
+GET http://ic.snssdk.com/2/essay/zone/activities/count/?&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: ic.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100
+X-SS-Cookie: install_id=2335870100
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:56:49 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 117
+
+{
+    "message": "success", 
+    "data": {
+        "count": 4, 
+        "tips": "有4条新活动，点击刷新"
+    }}
+第12个接口
+        TODO  还有顶部标题切换“推荐”   、 “热门” 。。。
+这个接口返回的是内涵段子文本内容的列表，如果以前已经加载过，那么这个接口地址需要增加一个min_time 参数，来加载新的数据。
+
+请求地址参数
+                category_id=1                段子类型  2 表示图片段子  1 是文本段子
+                level=6                	        固定的
+                count=30                        服务器返回的条目数
+                iid=2335870100              第二个接口返回
+                device_id=2718056496   第二个接口返回的
+
+
+                ac=wifi
+                channel=wandoujia
+                aid=7
+                app_name=joke_essay
+                version_code=302
+                device_platform=android
+                device_type=H30-U10
+                os_api=17
+                os_version=4.2.2
+                uuid=359209028606337
+                openudid=ac5c8292595d0744
+                亮色是公共参数， 
+
+GET http://ic.snssdk.com/2/essay/zone/category/data/?category_id=1&level=6&count=30&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: ic.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100
+X-SS-Cookie: install_id=2335870100
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 06:57:34 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 67949
+{
+    "message": "success", 
+    "data": {
+        "has_more": true, 
+        "min_time": 1411887454, 
+        "tip": "49条新内容,其中6条历史穿越内容", 
+        "data": [
+            {
+                "online_time": 1411887454, 
+                "display_time": 1411887454, 
+                "group": {
+                    "create_time": 1411886556, 
+                    "favorite_count": 0, 
+                    "user_bury": 0, 
+                    "user_favorite": 0, 
+                    "bury_count": 51, 
+                    "share_url": "http://toutiao.com/group/3564688246/?iid=2335870100&app=joke_essay", 
+                    "label": 4, 
+                    "content": "最近户外运动较多，哥们见了就问:怎么黑得跟宋小宝似的？！哥一听就不爽了:麻痹！宋小宝黑的有这么帅吗？这是正宗的古天乐黑！", 
+                    "comment_count": 0, 
+                    "status": 1, 
+                    "has_comments": 0, 
+                    "go_detail_count": 0, 
+                    "status_desc": "已发表到新鲜列表", 
+                    "user": {
+                        "avatar_url": "http://p0.pstatp.com/thumb/1173/8568054513", 
+                        "user_id": 3157022587, 
+                        "name": "每日看些段子---快乐活一辈子", 
+                        "user_verified": false
+                    }, 
+                    "user_digg": 0, 
+                    "group_id": 3564688246, 
+                    "level": 1, 
+                    "repin_count": 0, 
+                    "digg_count": 42, 
+                    "user_repin": 0, 
+                    "category_id": 1
+                }, 
+                "comments": [ ], 
+                "type": 1
+            }, 
+                ....
+]
+
+"max_time": 1411887440
+    }}
+
+
+
+
+第13条   检查文本段子内容更新
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+48	200	HTTP	ic.snssdk.com	/2/essay/zone/category/count/?category_id=1&level=6&min_time=1411887454&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	124	
+application/json	
+
+
+GET http://ic.snssdk.com/2/essay/zone/category/count/?category_id=1&level=6&min_time=1411887454&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: ic.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100; ctIDv3=110000; rl23864=1
+X-SS-Cookie: install_id=2335870100; ctIDv3=110000; rl23864=1
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 07:00:19 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 119
+{
+    "message": "success", 
+    "data": {
+        "count": 31, 
+        "tips": "有31条新内容，点击刷新"
+    }}
+第14条  文本段子列表分页加载接口
+
+
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+4	200	HTTP	ic.snssdk.com	/2/essay/zone/category/data/?category_id=1&level=6&count=30&max_time=1411887440&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	12,983	
+application/json	
+
+
+GET http://ic.snssdk.com/2/essay/zone/category/data/?category_id=1&level=6&count=30&max_time=1411887440&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: ic.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100; ctIDv3=110000; rl23864=1
+X-SS-Cookie: install_id=2335870100; ctIDv3=110000; rl23864=1
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 07:29:11 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 62337
+
+{
+    "message": "success", 
+    "data": {
+        "has_more": true, 
+        "min_time": 1411887429, 
+        "tip": "48条新内容,其中6条历史穿越内容", 
+        "data": [
+            {
+                "online_time": 1411887429, 
+                "display_time": 1411887429, 
+                "group": {
+                    "create_time": 1411886632, 
+                    "favorite_count": 0, 
+                    "user_bury": 0, 
+                    "user_favorite": 0, 
+                    "bury_count": 130, 
+                    "share_url": "http://toutiao.com/group/3564690511/?iid=2335870100&app=joke_essay", 
+                    "label": 4, 
+                    "content": "一次。心仪的女神让我去接她 我骑上摩托车就去了。结果她看到我。转身上了对面四个轱辘的。我摸了摸口袋中的法拉利钥匙。转身走了", 
+                    "comment_count": 18, 
+                    "status": 1, 
+                    "has_comments": 0, 
+                    "go_detail_count": 0, 
+                    "status_desc": "已发表到新鲜列表", 
+                    "user": {
+                        "avatar_url": "http://mat1.gtimg.com/www/mb/images/head_50.jpg", 
+                        "user_id": 3535815240, 
+                        "name": "喂你节操掉了i", 
+                        "user_verified": false
+                    }, 
+                    "user_digg": 0, 
+                    "group_id": 3564690511, 
+                    "level": 1, 
+                    "repin_count": 0, 
+                    "digg_count": 101, 
+                    "user_repin": 0, 
+                    "category_id": 1
+                }, 
+                "comments": [ ], 
+                "type": 1
+            }, 
+                ....
+                
+                ]
+ "max_time": 1411886022
+   }}
+        
+
+第15个接口   图片接口
+    获取列表，分类id为2 
+              同图片列表
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+3	200	HTTP	ic.snssdk.com	/2/essay/zone/category/data/?category_id=2&level=6&count=30&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	10,652	
+application/json	
+
+
+GET http://ic.snssdk.com/2/essay/zone/category/data/?category_id=2&level=6&count=30&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: ic.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100; ctIDv3=110000; rl23864=1
+X-SS-Cookie: install_id=2335870100; ctIDv3=110000; rl23864=1
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 07:35:46 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 72711
+
+{
+    "message": "success", 
+    "data": {
+        "has_more": true, 
+        "min_time": 1411889746, 
+        "tip": "47条新内容", 
+        "data": [
+            {
+                "online_time": 1411889746, 
+                "display_time": 1411889746, 
+                "group": {
+                    "create_time": 1411308556, 
+                    "favorite_count": 625, 
+                    "go_detail_count": 1892, 
+                    "user_favorite": 0, 
+                    "bury_count": 590, 
+                    "share_url": "http://toutiao.com/group/3550069165/?iid=2335870100&app=joke_essay", 
+                    "label": 1, 
+                    "content": "别说你没有过", 
+                    "comment_count": 86, 
+                    "user_bury": 0, 
+                    "status": 3, 
+                    "has_comments": 0, 
+                    "large_image": {
+                        "width": 245, 
+                        "url_list": [
+                            {
+                                "url": "http://p2.pstatp.com/large/1336/6141547377"
+                            }, 
+                            {
+                                "url": "http://p0.pstatp.com/large/1336/6141547377"
+                            }, 
+                            {
+                                "url": "http://p.pstatp.com/large/1336/6141547377"
+                            }
+                        ], 
+                        "uri": "large/1336/6141547377", 
+                        "height": 600
+                    }, 
+                    "description": "别说你没有过", 
+                    "status_desc": "已发表到热门列表", 
+                    "user": {
+                        "avatar_url": "http://tp1.sinaimg.cn/5035131464/50/5687357651/0", 
+                        "user_id": 3396112249, 
+                        "name": "Adelestnee", 
+                        "user_verified": false
+                    }, 
+                    "user_digg": 0, 
+                    "group_id": 3550069165, 
+                    "level": 4, 
+                    "repin_count": 625, 
+                    "digg_count": 10057, 
+                    "has_hot_comments": 1, 
+                    "image_status": 1, 
+                    "user_repin": 0, 
+                    "category_id": 2, 
+                    "middle_image": {
+                        "width": 202, 
+                        "url_list": [
+                            {
+                                "url": "http://p2.pstatp.com/w202/1336/6141547377"
+                            }, 
+                            {
+                                "url": "http://p0.pstatp.com/w202/1336/6141547377"
+                            }, 
+                            {
+                                "url": "http://p.pstatp.com/w202/1336/6141547377"
+                            }
+                        ], 
+                        "uri": "w202/1336/6141547377", 
+                        "height": 494
+                    }
+                }, 
+                "comments": [ ], 
+                "type": 1
+            }, 
+              ...
+             ], 
+        "max_time": 1411875046
+   }}
+
+
+
+第16个接口  图片分页 下拉刷新
+请求的header 和服务器的响应和文本服务列表相同。
+   唯一不同的是 增加了一个min_time参数
+
+
+http://ic.snssdk.com/2/essay/zone/category/data/?category_id=2&level=6&count=30&min_time=1411889746&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744
+
+第17详情页面
+      评论     
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom
+2	200	HTTP	isub.snssdk.com	/2/data/get_essay_comments/?group_id=3550291125&count=20&offset=0&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744	3,682	
+application/json	
+
+
+
+
+GET http://isub.snssdk.com/2/data/get_essay_comments/?group_id=3550291125&count=20&offset=0&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744 HTTP/1.1
+Accept-Encoding: gzip
+Host: isub.snssdk.com
+Connection: Keep-Alive
+Cookie: install_id=2335870100; ctIDv3=110000; rl23864=1
+X-SS-Cookie: install_id=2335870100; ctIDv3=110000; rl23864=1
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.1
+Date: Sun, 28 Sep 2014 07:58:24 GMT
+Content-Type: application/json
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Content-Length: 17154
+{
+    "has_more": true, 
+    "message": "success", 
+    "group_id": 3550291125, 
+    "data": {
+        "recent_comments": [
+            {
+                "uid": 0, 
+                "text": "为你的ID我才点的赞。", 
+                "create_time": 1411880075, 
+                "user_digg": 0, 
+                "id": 3564464696, 
+                "user_bury": 0, 
+                "user_profile_url": "", 
+                "user_id": 3232848098, 
+                "bury_count": 0, 
+                "description": "这个用户很懒，神马都木有写", 
+                "digg_count": 0, 
+                "user_verified": false, 
+                "platform": "feifei", 
+                "user_name": "Minerva9320392", 
+                "user_profile_image_url": "http://p2.pstatp.com/thumb/728/7282219743"
+            }, 
+          ....
+        ], 
+        "top_comments": [
+            {
+                "uid": 0, 
+                "text": "扔了辆自行车，五年后有买回来了～～难道还能骑出当年的感觉？", 
+                "create_time": 1411310810, 
+                "user_digg": 0, 
+                "id": 3550336918, 
+                "user_bury": 0, 
+                "user_profile_url": "", 
+                "user_id": 3298479692, 
+                "bury_count": 4, 
+                "digg_count": 138, 
+                "user_verified": false, 
+                "platform": "feifei", 
+                "user_name": "隔壁老王他二大爷武功真的很高", 
+                "user_profile_image_url": "http://tp4.sinaimg.cn/1250584663/50/5663648828/1"
+            }, 
+         ...
+        ]
+    }, 
+    "total_number": 185}
+18.评论列表点击加载更多
+
+        上拉刷新
+http://isub.snssdk.com/2/data/get_essay_comments/?group_id=3550291125&count=20&offset=20&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=H30-U10&os_api=17&os_version=4.2.2&uuid=359209028606337&openudid=ac5c8292595d0744
