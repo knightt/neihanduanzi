@@ -1,0 +1,121 @@
+10-05 16:30:53.168: D/dalvikvm(29141): threadid=17: interp stack at 0x515d7000
+10-05 16:30:53.168: D/dalvikvm(29141): threadid=17: calling run()
+10-05 16:30:53.168: D/dalvikvm(29141): threadid=18: interp stack at 0x516df000
+10-05 16:30:53.169: D/dalvikvm(29141): threadid=18: calling run()
+10-05 16:30:53.169: D/dalvikvm(29141): threadid=19: interp stack at 0x516e7000
+10-05 16:30:53.170: D/dalvikvm(29141): threadid=19: calling run()
+10-05 16:30:53.170: D/dalvikvm(29141): threadid=20: interp stack at 0x516ef000
+10-05 16:30:53.170: D/dalvikvm(29141): threadid=20: calling run()
+10-05 16:30:53.171: D/dalvikvm(29141): threadid=21: interp stack at 0x516f7000
+10-05 16:30:53.171: D/dalvikvm(29141): threadid=21: calling run()
+10-05 16:30:53.173: D/ActivityThread(29141): ACT-AM_ON_RESUME_CALLED ActivityRecord{4168be78 token=android.os.BinderProxy@4168b6b0 {com.john.neihanduanzi/com.john.test.TestActivity}}
+10-05 16:30:53.179: D/ActivityThread(29141): ACT-LAUNCH_ACTIVITY handled : 0 / ActivityRecord{4168be78 token=android.os.BinderProxy@4168b6b0 {com.john.neihanduanzi/com.john.test.TestActivity}}
+10-05 16:30:53.414: I/System.out(29141): [socket][2] connection /10.0.159.165:8888;LocalPort=50365(2500)
+10-05 16:30:53.414: I/System.out(29141): [CDS]connect[/10.0.159.165:8888] tm:2
+10-05 16:30:53.415: E/Posix(29141): [CDS]Libcore_io_Posix-throwErrnoException, functionName: connect; errno: Operation now in progress
+10-05 16:30:53.415: D/Posix(29141): [Posix_connect Debug]Process com.john.neihanduanzi :8888 
+10-05 16:30:55.923: I/System.out(29141): [socket][3:50365] exception
+10-05 16:30:55.923: I/System.out(29141): [CDS]close[50365]
+10-05 16:30:55.924: I/System.out(29141): [socket][3] connection isub.snssdk.com/60.28.208.188:80;LocalPort=40465(2500)
+10-05 16:30:55.925: I/System.out(29141): [CDS]connect[isub.snssdk.com/60.28.208.188:80] tm:2
+10-05 16:30:55.925: E/Posix(29141): [CDS]Libcore_io_Posix-throwErrnoException, functionName: connect; errno: Operation now in progress
+10-05 16:30:55.926: D/Posix(29141): [Posix_connect Debug]Process com.john.neihanduanzi :80 
+10-05 16:30:55.953: I/System.out(29141): [socket][/192.168.24.2:40465]
+10-05 16:30:55.953: I/System.out(29141): rx timeout:2500
+10-05 16:30:56.029: I/System.out(29141): [CDS]close[40465]
+10-05 16:30:56.030: I/System.out(29141): close [socket][/0.0.0.0:40465]
+10-05 16:30:56.065: D/TestActiviy(29141): Comment List :{
+10-05 16:30:56.065: D/TestActiviy(29141):     "data": {
+10-05 16:30:56.065: D/TestActiviy(29141):         "top_comments": [],
+10-05 16:30:56.065: D/TestActiviy(29141):         "recent_comments": [
+10-05 16:30:56.065: D/TestActiviy(29141):             {
+10-05 16:30:56.065: D/TestActiviy(29141):                 "uid": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "platform": "feifei",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "text": "老公的神回复呀：＂老婆，必须的全力以赴，真干实干！＂ 这是他们单位的工作口号给用我这啦！[擦汗][惊恐][偷笑][害羞][色]。",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "digg_count": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_digg": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_verified": false,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "bury_count": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_profile_url": "",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "id": 1421479394,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_name": "petmaggie",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_bury": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_profile_image_url": "http:\/\/mat1.gtimg.com\/www\/mb\/images\/head_50.jpg",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "description": "这个用户很懒，神马都木有写",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "create_time": 1361772576,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_id": 1243198063
+10-05 16:30:56.065: D/TestActiviy(29141):             },
+10-05 16:30:56.065: D/TestActiviy(29141):             {
+10-05 16:30:56.065: D/TestActiviy(29141):                 "uid": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "platform": "feifei",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "text": "军功章有我的一半也有你的一半，感谢老公白天与夜晚的大力支持！在此向你说声：＂老公，辛苦啦！＂",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "digg_count": 1,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_digg": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_verified": false,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "bury_count": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_profile_url": "",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "id": 1421392736,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_name": "petmaggie",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_bury": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_profile_image_url": "http:\/\/mat1.gtimg.com\/www\/mb\/images\/head_50.jpg",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "description": "这个用户很懒，神马都木有写",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "create_time": 1361770952,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_id": 1243198063
+10-05 16:30:56.065: D/TestActiviy(29141):             },
+10-05 16:30:56.065: D/TestActiviy(29141):             {
+10-05 16:30:56.065: D/TestActiviy(29141):                 "uid": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "platform": "feifei",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "text": "这老公真幸福",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "digg_count": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_digg": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_verified": false,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "bury_count": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_profile_url": "",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "id": 1414983600,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_name": "帅的想整容",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_bury": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_profile_image_url": "http:\/\/tp1.sinaimg.cn\/3181701880\/50\/0\/1",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "description": "人生就是一列开往坟墓的列车，路途上会有很多站，很难有人可以至始至终陪着走完，当陪你的人要下车时，即使不舍，也该心存感激，然后挥手道别。",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "create_time": 1361606826,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_id": 1414945608
+10-05 16:30:56.065: D/TestActiviy(29141):             },
+10-05 16:30:56.065: D/TestActiviy(29141):             {
+10-05 16:30:56.065: D/TestActiviy(29141):                 "uid": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "platform": "feifei",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "text": "＂上＂研究生。速度的懂乐|〜",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "digg_count": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_digg": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_verified": false,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "bury_count": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_profile_url": "",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "id": 1414014233,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_name": "盆盆乃中老年妇女之友",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_bury": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_profile_image_url": "http:\/\/tp1.sinaimg.cn\/3169352224\/50\/5656268785\/1",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "description": "这个用户很懒，神马都木有写",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "create_time": 1361585716,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_id": 1407995204
+10-05 16:30:56.065: D/TestActiviy(29141):             },
+10-05 16:30:56.065: D/TestActiviy(29141):             {
+10-05 16:30:56.065: D/TestActiviy(29141):                 "uid": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "platform": "feifei",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "text": "你也能上研究生！还能上导师……",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "digg_count": 1,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_digg": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_verified": false,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "bury_count": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_profile_url": "",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "id": 1413978684,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_name": "孔德刚",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_bury": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_profile_image_url": "http:\/\/hdn.xnimg.cn\/photos\/hdn321\/20130105\/1150\/tiny_Htgs_a5cc000010b4113e.jpg",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "description": "这个用户很懒，神马都木有写",
+10-05 16:30:56.065: D/TestActiviy(29141):                 "create_time": 1361585036,
+10-05 16:30:56.065: D/TestActiviy(29141):                 "user_id": 1356995188
+10-05 16:30:56.065: D/TestActiviy(29141):             },
+10-05 16:30:56.065: D/TestActiviy(29141):             {
+10-05 16:30:56.065: D/TestActiviy(29141):                 "uid": 0,
+10-05 16:30:56.065: D/TestActiviy(29141):      
+10-05 16:31:52.976: D/ActivityThread(29141): ACT-AM_ON_PAUSE_CALLED ActivityRecord{4168be78 token=android.os.BinderProxy@4168b6b0 {com.john.neihanduanzi/com.john.test.TestActivity}}
+10-05 16:31:52.980: D/ActivityThread(29141): ACT-PAUSE_ACTIVITY handled : 0 / android.os.BinderProxy@4168b6b0
+10-05 16:31:52.981: D/ActivityThread(29141): ACT-STOP_ACTIVITY_SHOW handled : 0 / android.os.BinderProxy@4168b6b0

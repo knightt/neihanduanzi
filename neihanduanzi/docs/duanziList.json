@@ -1,0 +1,69 @@
+{
+    "message": "success",
+    "data": {
+        "has_more": true,
+        "min_time": 1411887357,
+        "tip": "50条新内容",
+        "data": [
+            {
+                "online_time": 1411878957,
+                "display_time": 1411878957,
+                "group": {
+                    "create_time": 1411718218.0,
+                    "favorite_count": 1209,
+                    "user_bury": 0,
+                    "user_favorite": 0,
+                    "bury_count": 1516,
+                    "share_url": "http://toutiao.com/group/3560859160/?iid=2337593504&app=joke_essay",
+                    "label": 1,
+                    "content": "甲:昨天碰到抢劫的，被打了两顿。乙:为啥啊？甲:他问我有钱吗我说没有，他从我身上搜出一包软中华然后就被打了一顿。等他走了，不一会儿又回来打了我一顿，因为他发现里面塞的是白红梅，劫匪走时还留下一句‘没钱还装B’",
+                    "comment_count": 177,
+                    "status": 3,
+                    "has_comments": 0,
+                    "go_detail_count": 4370,
+                    "status_desc": "已发表到热门列表",
+                    "user": {
+                        "avatar_url": "http://p1.pstatp.com/thumb/1367/2213311454",
+                        "user_id": 3080520868,
+                        "name": "请叫我梓安哥",
+                        "user_verified": false
+                    },
+                    "user_digg": 0,
+                    "group_id": 3560859160,
+                    "level": 4,
+                    "repin_count": 1209,
+                    "digg_count": 18424,
+                    "has_hot_comments": 1,
+                    "user_repin": 0,
+                    "category_id": 1
+                },
+                "comments": [],
+                "type": 1
+            },
+            {
+                "type": 5,
+                "display_time": 1411878658,
+                "online_time": 1411878658,
+                "ad": {
+                    "display_image_height": 400,
+                    "ad_id": 3561092485,
+                    "display_image_width": 600,
+                    "source": "",
+                    "package": "",
+                    "title": "霜霜和阿伟都爱玩的游戏，还有iphone6等你拿哦！",
+                    "open_url": "",
+                    "download_url": "http://yihua.b0.upaiyun.com/neihan.apk",
+                    "is_ad": 1,
+                    "display_info": "霜霜和阿伟都爱玩的游戏，还有iphone6等你拿哦！",
+                    "web_url": "http://yihua.b0.upaiyun.com/neihan.apk",
+                    "display_type": 3,
+                    "button_text": "立即下载",
+                    "appleid": "",
+                    "track_url": "",
+                    "label": "推广",
+                    "type": "app",
+                    "id": 3561092485,
+                    "ipa_url": "",
+                    "display_image": "http://p2.pstatp.com/large/1362/1075506622"
+                }
+            },
