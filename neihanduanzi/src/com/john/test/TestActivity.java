@@ -1,22 +1,17 @@
 package com.john.test;
 
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.android.volley.RequestQueue;
-import com.android.volley.Response.Listener;
 import com.android.volley.toolbox.Volley;
 import com.john.neihanduanzi.R;
 
 import com.john.neihanduanzi.bean.Comment;
 import com.john.neihanduanzi.bean.CommentList;
 import com.john.neihanduanzi.bean.EntityList;
-import com.john.neihanduanzi.bean.ImageEntity;
-import com.john.neihanduanzi.bean.TextEntity;
 import com.john.neihanduanzi.client.ClientAPI;
 
 import android.os.Bundle;
@@ -36,8 +31,10 @@ import com.android.volley.Response;
  * 
  */
 public class TestActivity extends Activity implements Response.Listener<String> {
+	
 	long lastTime;
 	private RequestQueue queue;
+	// 评论的参数
 	int offset;
 	/**
 	 * 分类ID, 1 代表文本
@@ -62,7 +59,7 @@ public class TestActivity extends Activity implements Response.Listener<String> 
 		final int itemCount = 5;
 
 		// 这个ID是对应文本段子的ID
-		final long groupId = 1410053871L;
+		final long groupId = 3551461874L;
 	
 		//ClientAPI.getComments(queue, groupId, offset, this);
 		
@@ -72,12 +69,12 @@ public class TestActivity extends Activity implements Response.Listener<String> 
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				ClientAPI.getList(queue, CATEGORY_IMAGE, 30, lastTime,
-						TestActivity.this);
-				// ClientAPI.getList(queue, CATEGORY_TEXT, itemCount,lastTime,
-				// TestActivity.this);
-				 ClientAPI.getComments(queue,groupId, offset,TestActivity.this);
+			
+				//老师是固定返回30条段子，
+				/*ClientAPI.getList(queue, CATEGORY_IMAGE, itemCount, lastTime,
+						TestActivity.this);*/
+				//返回评论  offset是记录从哪儿得到的  每次都固定得到20条
+				 ClientAPI.getComments(queue, groupId, offset,TestActivity.this);
 			}
 		});
 
@@ -99,10 +96,14 @@ public class TestActivity extends Activity implements Response.Listener<String> 
 			commentList.parseJson(json);
 
 			long groupId = commentList.getGroupId();
+			boolean hasMore = commentList.isHasMore();
+		    int totalNumber = commentList.getTotalNumber();
 			Log.d("TestActivity", "--groupId" + groupId);
+			Log.d("TestActivity", "--hasMore" + hasMore);
+			Log.d("TestActivity", "--totalNumber" + totalNumber);
 			
 			//表示评论列表是否还可以继续加载
-			boolean hasMore = commentList.isHasMore();
+			
 			
 			
 			List<Comment> topComments = commentList.getTopComments();

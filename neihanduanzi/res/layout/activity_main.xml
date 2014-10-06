@@ -1,16 +1,55 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+    <FrameLayout
+        android:id="@+id/main_fragment_conatiner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </FrameLayout>
 
-</RelativeLayout>
+    <RadioGroup
+        android:id="@+id/main_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/bg_tabbar"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/main_tab_item_text"
+            style="@style/main_tab_item"
+            android:drawableTop="@drawable/main_tab_essay_bg"
+            android:checked="true"
+            android:text="@string/main_tab_item_text" />
+
+        <RadioButton
+            android:id="@+id/main_tab_item_iamge"
+            style="@style/main_tab_item"
+            android:drawableTop="@drawable/main_tab_image_bg"
+            android:text="@string/main_tab_item_image" />
+
+        <RadioButton
+            android:id="@+id/main_tab_item_check"
+            style="@style/main_tab_item"
+            android:drawableTop="@drawable/main_tab_check_bg"
+            android:text="@string/main_table_item_check" />
+
+        <RadioButton
+            android:id="@+id/main_tab_item_activity"
+            style="@style/main_tab_item"
+            android:drawableTop="@drawable/main_tab_activities_bg"
+            android:text="@string/main_tab_item_huodong" />
+
+        <RadioButton
+            android:id="@+id/main_tab_item_my"
+            style="@style/main_tab_item"
+            android:drawableTop="@drawable/main_tab_mine_bg"
+            android:text="@string/main_tab_item_mine" />
+    </RadioGroup>
+
+</LinearLayout>

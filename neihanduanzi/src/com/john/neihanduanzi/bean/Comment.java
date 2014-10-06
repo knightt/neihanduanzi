@@ -3,7 +3,6 @@ package com.john.neihanduanzi.bean;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.provider.MediaStore.Video;
 
 public class Comment {
 	/*"recent_comments": [
@@ -56,7 +55,7 @@ public class Comment {
 			userName = json.getString("user_name");
 			userBury = json.getInt("user_bury");
 			userProfileImageUrl = json.getString("user_profile_image_url");//用户头像列表
-			description = json.getString("description");
+			description = json.optString("description");
 			createTime = json.getLong("create_time");
 			userId = json.getLong("user_id");
 			
