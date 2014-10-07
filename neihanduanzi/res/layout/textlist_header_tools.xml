@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:background="#fff"
              android:orientation="horizontal">
+             <!-- 上面的那两个不要脸的按钮 -->
              <TextView 
                  android:id="@+id/quick_tools_publish"
                  android:layout_width="0dp"

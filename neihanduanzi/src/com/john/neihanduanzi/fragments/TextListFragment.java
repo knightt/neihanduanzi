@@ -55,7 +55,7 @@ public class TextListFragment extends Fragment implements OnClickListener,
 
 		PullToRefreshListView refreshListView = (PullToRefreshListView) view
 				.findViewById(R.id.textlist_listview);
-		
+		//MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK//
 		//设置上拉与下拉的事件监听
 		refreshListView.setOnRefreshListener(this);
 		refreshListView.setMode(Mode.BOTH);

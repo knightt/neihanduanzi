@@ -18,6 +18,7 @@
     </style>
     
     <!--地段radioGroup的样式-->
+    <!-- button :@null去掉圈      background ：@null去掉button的背景-->
     <style name = "main_tab_item">
             <item name = "android:layout_width">0dp</item>
             <item name = "android:layout_height">wrap_content</item>
@@ -28,7 +29,7 @@
             <item name = "android:textColor">@color/main_tab_text_color</item>
             <item name = "android:textSize">10sp</item>
     </style>
-    
+  
   
 
 </resources>

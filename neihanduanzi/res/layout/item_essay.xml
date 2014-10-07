@@ -4,12 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <!-- 图片和段子用一个布局 -->
+    <!-- 用户名和头像 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <ImageView
+        <ImageViewbh
             android:id="@+id/item_profile_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -20,17 +22,20 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
+    <!-- 加载段子内容的 直接用一个textview，没用布局包裹 -->
     <TextView
         android:id="@+id/item_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- 如果是图片  就用这个布局 -->
     <LinearLayout
         android:id="@+id/item_image_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
+        <!-- 加载图片进度条，它是在图片外面的 -->
         <ProgressBar
             android:id="@+id/item_image_download_progress"
             style="?android:attr/progressBarStyleHorizontal"
@@ -41,6 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
+            <!-- Gif图片或一般图片展示 -->
             <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/gifImageView"
                 android:layout_width="wrap_content"
@@ -49,6 +55,7 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_launcher" />
 
+            <!-- 设置图片上面的选项，点击加载图片 -->
             <TextView
                 android:id="@+id/btnGifPlay"
                 android:layout_width="50dp"
@@ -67,6 +74,7 @@
 
         <!-- checkBox用button属性 设置 -->
 
+		<!-- 设置居中 -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"

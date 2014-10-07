@@ -3,37 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+    <!-- 段子XML文件，第一个fragment -->
     <!-- 标题部分 -->
      <TextView
          android:id="@+id/textlist_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/main_tab_item_text" />
     
-
+	<!-- ListView放在最下面，之后是两个不要脸的TextView，最后是TextView -->
      <FrameLayout 
          android:layout_width="match_parent"
          android:layout_height="0dp"
          android:layout_weight="1">
          
          <!-- 段子列表内容 -->
-         
+         <!-- 相当于listview  -->
          <com.handmark.pulltorefresh.library.PullToRefreshListView
              android:id="@+id/textlist_listview"
-               android:layout_width="match_parent"
+             android:layout_width="match_parent"
              android:layout_height="match_parent"
              />
          
          
-        <!--  <ListView 
-             android:id="@+id/textlist_listview"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
-             
-         </ListView> -->
+     
          
-         <!-- ????????????? 快速工具条-->
+         <!-- *****快速工具条*****-->
+         <!-- 只是把相同的代码提出来了   ！！！  注意：提出来的代码就不要加id了  切记！ -->
          <include 
              android:id="@+id/textlist_quick_tools"
              layout = "@layout/textlist_header_tools" />"
