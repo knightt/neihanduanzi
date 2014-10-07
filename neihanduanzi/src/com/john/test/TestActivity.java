@@ -31,9 +31,9 @@ import com.android.volley.Response;
  * 
  */
 public class TestActivity extends Activity implements Response.Listener<String> {
-	
-	long lastTime;
 	private RequestQueue queue;
+	long lastTime;
+	
 	// 评论的参数
 	int offset;
 	/**

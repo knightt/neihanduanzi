@@ -1,5 +1,7 @@
 package com.john.neihanduanzi.bean;
 
+import java.io.Serializable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -9,8 +11,10 @@ import org.json.JSONObject;
  * @author John
  *
  */
-public class TextEntity{
+public class TextEntity implements Serializable{
 	
+	private static final long serialVersionUID = -7973203949044064329L;
+
 	private int type;
 
 	private long createTime;

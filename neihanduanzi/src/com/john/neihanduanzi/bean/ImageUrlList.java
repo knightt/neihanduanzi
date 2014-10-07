@@ -1,5 +1,6 @@
 package com.john.neihanduanzi.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 //large_image 里面的属性  它里面有一个jsonArray  单独提出成一个类
-public class ImageUrlList {
+public class ImageUrlList implements Serializable {
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2103096896511129178L;
+	
 	private List<String> largeImageUrls;
 	private String uri;
 	private int width;

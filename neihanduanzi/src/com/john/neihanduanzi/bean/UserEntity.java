@@ -1,10 +1,18 @@
 package com.john.neihanduanzi.bean;
 
+import java.io.Serializable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class UserEntity {
+public class UserEntity implements Serializable{
 
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7504889809167569711L;
 	/*
 	 *  "user": {
                         "avatar_url": "http://tp1.sinaimg.cn/5035131464/50/5687357651/0", 

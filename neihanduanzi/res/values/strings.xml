@@ -10,5 +10,6 @@
     <string name="main_table_item_check">审核</string>
     <string name="main_tab_item_huodong">活动</string>
     <string name="main_tab_item_mine">我的</string>
+    <string name="title_activity_essay_deatil">EssayDeatilActivity</string>
 
 </resources>
